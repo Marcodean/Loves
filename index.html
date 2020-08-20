@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>¿Cual es la respuesta?</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+  <link rel="icon" href="hecho.ico" >
+	<style>
+		/*#elemento {position:absolute;width:100px;height:100px;background-color:#ccc;}*/
+	</style>
+
+	<script>
+		// Función que devuelve un numero aleatorio entre el min y el max indicado
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+		$(document).ready(function(){
+			$(".grid-item3").hover(function(){
+
+				// obtenemos el valor vertical aleatorio
+				// entre 1 y la altura de la pantalla menos los 100 px del elemento
+				var v=getRandomInt(1,$(window).height()-100);
+
+				// obtenemos el valor horizontal aleatorio
+				// entre 1 y la anchura de la pantalla menos los 100 px del elemento
+				var h=getRandomInt(1,$(window).width()-100);
+
+				// movemos el elemento a la nueva posición
+				$(this).css({top: v+"px", left: h+"px"});
+			});
+		});
+	</script>
+</head>
+<body>
+
+
+
+	<div>
+        <h1 class="grid-item2">¿Quieres ser mi novia?</h1>
+    <div>
+    <br><br><br>
+    <div class="grid-container">
+        <a href="heart.html"><div class="grid-item">SI</div></a>
+        <div class="grid-item3">NO</div>
+    </div>
+
+
+</body>
+</html>
